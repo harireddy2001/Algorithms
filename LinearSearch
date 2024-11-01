@@ -1,0 +1,20 @@
+using System;
+using System.Linq;
+public class LinearSearch{
+    public static void Main(string[] args){
+        int target = Convert.ToInt32(Console.ReadLine());
+        int[] arr = Console.ReadLine().Split(",").Select(x=>Convert.ToInt32(x)).ToArray();
+        if(LinearSearchAlgorithm(arr, target))
+            Console.WriteLine("Found");
+        else
+            Console.WriteLine("Not Found");
+    }
+    public static bool LinearSearchAlgorithm(int[] arr, int target){
+        foreach(var i in arr){
+            if(target == i){
+               return true;
+            }
+        }
+        return false;
+    }
+}
