@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+public class Sorting{
+    public static void Main(string[] args){
+        int[] arr = Console.ReadLine().Split(",").Select(x=>Convert.ToInt32(x)).ToArray();
+        foreach(var i in SelectionSortAlgorithm(arr)){
+            Console.WriteLine(i);
+        }
+    }
+    public static int[] SelectionSortAlgorithm(int[] arr){
+        for(int i = 0; i<arr.Length; i++){
+            for(int j= i+1;j<arr.Length;j++){
+                if(arr[j]<arr[i]){
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+}
